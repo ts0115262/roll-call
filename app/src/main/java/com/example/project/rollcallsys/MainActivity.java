@@ -7,12 +7,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-private Button button1;
+    private Button button1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button1.findViewById(R.id.hello);
+        button1 = findViewById(R.id.hello);
         button1.setOnClickListener(this);
     }
 
