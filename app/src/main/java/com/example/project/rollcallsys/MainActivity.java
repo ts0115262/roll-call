@@ -1,23 +1,24 @@
 package com.example.project.rollcallsys;
 
+import android.app.ProgressDialog;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
-import com.example.project.rollcallsys.inerfaces.student.LoginAsStudent;
+import com.example.project.rollcallsys.jh.Classes.Characters.Student;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btn_login;
     RadioGroup rg_character;
-    EditText et_passowrd;
+    EditText et_password;
     EditText et_username;
     String username;
     String password;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         rg_character = findViewById(R.id.rg_character);
         btn_login = findViewById(R.id.btn_login);
-        et_passowrd = findViewById(R.id.et_psw);
+        et_password = findViewById(R.id.et_psw);
         et_username = findViewById(R.id.et_psw);
 
 
@@ -37,28 +38,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
+                progressDialog = new ProgressDialog(this);
+                progressDialog.setTitle("");
+                progressDialog.setCancelable(false);
+                progressDialog.setMessage("正在登陆...");
+                progressDialog.show();
+
+                int character = rg_character.getCheckedRadioButtonId();
+                username = et_username.getText().toString();
+                password = et_password.getText().toString();
 
 
-
-
-                login();
-        }
-    }
-
-    private void login() {
-        int character = rg_character.getCheckedRadioButtonId();
-        username = et_username.getText().toString();
-        password = et_passowrd.getText().toString();
-        if (character == R.id.rb_student) {
-            LoginAsStudent loginAsStudent = new LoginAsStudent() {
-                @Override
-                public boolean login(String userName, String password) {
-                    return true;
+                if (username.equals("Wrong")) {
+                    progressDialog.cancel();
+                    TextInputLayout textInputLayout = findViewById(R.id.tl_username);
+                    textInputLayout.setErrorEnabled(true);
+                    textInputLayout.setError("请输入正确的用户名和密码");
                 }
-            };
-            if (loginAsStudent.login(username, password)){
 
-            }
+                if (character == R.id.rb_student) {
+                    progressDialog.cancel();
+                    Student student = new Student();
+                }
         }
+
     }
 }
+
