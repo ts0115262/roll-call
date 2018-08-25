@@ -19,17 +19,19 @@ public class SplashActivity extends AppCompatActivity {
 
         initView();
     }
+
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case StaticClass.HANDLER_SPLASH:
-                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
                     finish();
                     break;
             }
         }
     };
+
     private void initView() {
         //延时2000ms
         handler.sendEmptyMessageDelayed(StaticClass.HANDLER_SPLASH, 2000);

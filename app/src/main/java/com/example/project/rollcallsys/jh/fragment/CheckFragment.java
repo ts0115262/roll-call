@@ -17,7 +17,7 @@ import com.example.project.rollcallsys.R;
  */
 public class CheckFragment extends Fragment {
 
-    Spinner time,classes;
+    Spinner time, classes;
 
 
     public CheckFragment() {
@@ -40,13 +40,13 @@ public class CheckFragment extends Fragment {
 
     private void initView() {
 
-        time=getActivity().findViewById(R.id.s_time);
-        classes=getActivity().findViewById(R.id.s_classes);
-        String[] arr = {"Class 1","Class 2","Class 3" };
-        ArrayAdapter<String> classAdapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_spinner_dropdown_item,arr);
+        time = getActivity().findViewById(R.id.s_time);
+        classes = getActivity().findViewById(R.id.s_classes);
+        String[] arr = {"Class 1", "Class 2", "Class 3"};
+        ArrayAdapter<String> classAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, arr);
         classes.setAdapter(classAdapter);
-        String[] times ={"11:30-12:30","22:30 - 23:30"};
-        ArrayAdapter<String> timeAdapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_spinner_dropdown_item,times);
+        String[] times = {"11:30-12:30", "22:30 - 23:30"};
+        ArrayAdapter<String> timeAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, times);
         time.setAdapter(timeAdapter);
 
     }
