@@ -5,5 +5,5 @@ import java.util.Map;
 public class Teacher {
     private String Name;
     private int Number;
-    private Map<Integer,Class> Classes;
+    private Map<Integer, Class> Classes;
 }

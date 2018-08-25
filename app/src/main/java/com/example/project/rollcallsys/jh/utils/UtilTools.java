@@ -13,8 +13,8 @@ import android.widget.TextView;
  * 描述： 工具统一类
  */
 public class UtilTools {
-    public static void setFont(Context mContent, TextView textView){
-        Typeface fontType =Typeface.createFromAsset(mContent.getAssets(),"fonts/FONT.TTF");
+    public static void setFont(Context mContent, TextView textView) {
+        Typeface fontType = Typeface.createFromAsset(mContent.getAssets(), "fonts/FONT.TTF");
         textView.setTypeface(fontType);
     }
 }

@@ -7,5 +7,5 @@ import java.util.Map;
 public class Class {
     private String Name;
     private int Number;
-    private Map<Integer,Student> stuendts;
+    private Map<Integer, Student> stuendts;
 }

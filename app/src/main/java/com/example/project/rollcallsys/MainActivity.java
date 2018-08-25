@@ -52,14 +52,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 username = et_username.getEditText().getText().toString();
                 password = et_password.getEditText().getText().toString();
 
-                Log.d("TAG","username="+username);
+                Log.d("TAG", "username=" + username);
                 if (username.equals("Wrong")) {
                     progressDialog.cancel();
                     TextInputLayout textInputLayout = findViewById(R.id.tl_username);
                     textInputLayout.setErrorEnabled(true);
                     textInputLayout.setError("请输入正确的用户名和密码");
                 }
-                if (username.equals("teacher")){
+                if (username.equals("teacher")) {
                     startActivity(new Intent(this, TeacherMainActivity.class));
                 }
         }

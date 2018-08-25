@@ -10,5 +10,5 @@ public class Student {
     private boolean isCheakedToday;
     private double eastLongitude;
     private double northLatitude;
-    private Map<Date,CheakedLog> cheakedHistory;
+    private Map<Date, CheakedLog> cheakedHistory;
 }
